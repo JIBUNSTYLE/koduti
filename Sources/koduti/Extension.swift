@@ -40,7 +40,7 @@ extension String {
     }
     
     func replaceVariables(prefix: String, targetName: String)  -> String {
-        let userName = run(bash: "echo $USER").stdout
+        let userName = NSFullUserName()
         
         let date: DateComponent = { _ -> DateComponent in
             let component = Calendar(identifier: .gregorian).dateComponents([.year, .month, .day], from: Date())
