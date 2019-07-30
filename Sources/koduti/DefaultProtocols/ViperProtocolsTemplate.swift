@@ -15,7 +15,14 @@ struct ViperProtocolsTemplate : Template {
     
     func body() -> String {
         return [
-            "import Foundation"
+            "//"
+            , "//  ViperProtocols.swift"
+            , "//  __TARGET__"
+            , "//"
+            , "//  Created by __USERNAME__ on __DATE__."
+            , "//"
+            , ""
+            , "import Foundation"
             , ""
             , "// MARK: - View"
             , "protocol UserInterface : AnyObject {"

@@ -74,7 +74,7 @@ public struct Initializer {
         let filePath = directoryPath + "ViperProtocols.swift"
         self.fileManager.createFile(atPath: filePath, contents: nil, attributes: nil)
         
-        let content = _template.body()
+        let content = _template.body().replaceVariables(prefix: "", targetName: projectName)
         try content.write(to: URL(fileURLWithPath: filePath)
             , atomically: true
             , encoding: String.Encoding.utf8
