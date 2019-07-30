@@ -15,7 +15,7 @@ Kuriを参考に作ったiOS用オレオレVIPERジェネレータ。
 ## How to build.
 
 ```bash
-$ git clone xxx
+$ git clone git@github.com:JIBUNSTYLE/koduti.git
 $ cd koduti
 $ swift build
 ```
