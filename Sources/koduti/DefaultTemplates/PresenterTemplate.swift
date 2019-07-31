@@ -9,8 +9,8 @@ import Foundation
 
 struct PresenterTemplate: SourceCodeTemplate {
     
+    let fileName = "__PREFIX__Presenter"
     let fileType = "swift"
-    let templateType = "Presenter"
     
     func parentDirectory() -> String {
         return "Service/Presentation/Presenters"

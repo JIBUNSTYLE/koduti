@@ -63,18 +63,18 @@ public struct Initializer {
     private func createProtocols(xcodeProjectFileName: String, projectName: String) throws {
         let outputPath = "./\(projectName)/"
         
-        let _template = ViperProtocolsTemplate()
+        let template = ViperProtocolsTemplate()
         
-        let directoryPath = outputPath + _template.parentDirectory() + "/"
+        let directoryPath = outputPath + template.parentDirectory() + "/"
         try self.fileManager.createDirectory(atPath: directoryPath
             , withIntermediateDirectories: true
             , attributes: nil
         )
         
-        let filePath = directoryPath + "ViperProtocols.\(_template.fileType)"
+        let filePath = "\(directoryPath)\(template.fileName).\(template.fileType)"
         self.fileManager.createFile(atPath: filePath, contents: nil, attributes: nil)
         
-        let content = _template.body().replaceVariables(prefix: "", targetName: projectName)
+        let content = template.body().replaceVariables(prefix: "", targetName: projectName)
         try content.write(to: URL(fileURLWithPath: filePath)
             , atomically: true
             , encoding: String.Encoding.utf8
@@ -94,26 +94,32 @@ public struct Initializer {
     
     private func createTemplates() throws {
         let outputPath = "./\(TEMPLATES_DIRECTORY_NAME)/"
+        let templates = [
+            InteractorTemplate()
+            , RouterTemplate()
+            , PresenterTemplate()
+            , StoryboardTemplate()
+            , ViewControllerTemplate()
+        ] as [Template]
         
-        try DefaultTemplates.elements.forEach { template in
-            let _template = template.template()
+        try templates.forEach { template in
             
-            let directoryPath = outputPath + _template.parentDirectory() + "/"
+            let directoryPath = outputPath + template.parentDirectory() + "/"
             try self.fileManager.createDirectory(atPath: directoryPath
                 , withIntermediateDirectories: true
                 , attributes: nil
             )
             
-            let filePath = directoryPath + template.fileName + ".\(_template.fileType)"
+            let filePath = "\(directoryPath)\(template.fileName).\(template.fileType)"
             self.fileManager.createFile(atPath: filePath, contents: nil, attributes: nil)
             
-            let content = _template.body()
+            let content = template.body()
             try content.write(to: URL(fileURLWithPath: filePath)
                 , atomically: true
                 , encoding: String.Encoding.utf8
             )
             
-            print("created the template for \(template.name) at \(filePath)")
+            print("created \(template.self) at \(filePath)")
         }
     }
 }

@@ -8,13 +8,13 @@
 import Foundation
 
 protocol Template {
+    var fileName: String { get }
     var fileType: String { get }
     func parentDirectory() -> String
     func body() -> String
 }
 
 protocol SourceCodeTemplate : Template {
-    var templateType: String { get }
     func parentDirectory() -> String
     func interface() -> String
     func implementation() -> String
@@ -34,7 +34,7 @@ extension SourceCodeTemplate {
     func comment() -> String {
         return [
             "//"
-            , "//  __PREFIX__\(templateType).swift"
+            , "//  \(fileName).swift"
             , "//  __TARGET__"
             , "//"
             , "//  Created by __USERNAME__ on __DATE__."

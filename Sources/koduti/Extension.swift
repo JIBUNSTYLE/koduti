@@ -7,26 +7,6 @@
 
 import Foundation
 
-protocol Enumerable {
-    associatedtype Element = Self
-}
-
-extension Enumerable where Element: RawRepresentable, Element.RawValue == Int {
-    static var enumerate: AnySequence<Element> {
-        return AnySequence { () -> AnyIterator<Element> in
-            var i = 0
-            return AnyIterator { () -> Element? in
-                let element = Element(rawValue: i)
-                i += 1
-                return element
-            }
-        }
-    }
-    static var elements: [Element] {
-        return Array(enumerate)
-    }
-}
-
 extension String {
     
     fileprivate struct DateComponent {

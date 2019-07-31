@@ -24,53 +24,6 @@ public enum KodutiCommands : String {
     case initialize = "init", generate = "gen"
 }
 
-enum DefaultTemplates: Int, Enumerable {
-    
-    case Interactor
-    case Router
-    case Presenter
-    case Storyboard
-    case ViewController
-    
-    init?(name: String) {
-        guard let element = DefaultTemplates
-            .elements
-            .filter ({ $0.name == name })
-            .first else
-        {
-            return nil
-        }
-        self = element
-    }
-    
-    var name: String {
-        return "\(self)"
-    }
-    
-    var fileName: String {
-        return "__PREFIX__\(name)"
-    }
-    
-    var templateName: String {
-        return "__" + name.uppercased() + "__"
-    }
-    
-    func template() -> Template {
-        switch self {
-        case .Interactor:
-            return InteractorTemplate()
-        case .Router:
-            return RouterTemplate()
-        case .Presenter:
-            return PresenterTemplate()
-        case .Storyboard:
-            return StoryboardTemplate()
-        case .ViewController:
-            return ViewControllerTemplate()
-        }
-    }
-}
-
 enum ConfigProperties: String {
     case Target
     case DefaultTemplateDirectoryPath

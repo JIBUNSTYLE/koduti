@@ -9,6 +9,7 @@ import Foundation
 
 struct StoryboardTemplate: Template {
     
+    let fileName = "__PREFIX__"
     let fileType = "storyboard"
     
     func parentDirectory() -> String {

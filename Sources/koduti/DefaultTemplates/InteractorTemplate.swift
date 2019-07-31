@@ -9,8 +9,8 @@ import Foundation
 
 struct InteractorTemplate: SourceCodeTemplate {
     
+    let fileName = "__PREFIX__Interactor"
     let fileType = "swift"
-    let templateType = "Interactor"
     
     func parentDirectory() -> String {
         return "Service/Application/Usecases"

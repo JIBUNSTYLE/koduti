@@ -9,8 +9,8 @@ import Foundation
 
 struct RouterTemplate: SourceCodeTemplate {
     
+    let fileName = "__PREFIX__Router"
     let fileType = "swift"
-    let templateType = "Router"
     
     func parentDirectory() -> String {
         return "Service/Presentation/Routers"

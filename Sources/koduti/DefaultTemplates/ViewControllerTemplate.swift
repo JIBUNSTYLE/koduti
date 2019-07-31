@@ -9,8 +9,8 @@ import Foundation
 
 struct ViewControllerTemplate: SourceCodeTemplate {
     
+    let fileName = "__PREFIX__ViewController"
     let fileType = "swift"
-    let templateType = "ViewController"
     
     func parentDirectory() -> String {
         return "Service/Presentation/ViewControllers"
@@ -27,7 +27,7 @@ struct ViewControllerTemplate: SourceCodeTemplate {
     
     func implementation() -> String {
         return [
-            "class __PREFIX__ViewController: BaseViewController {"
+            "class __PREFIX__ViewController: UIViewController {"
             , "    "
             , "    var presenter: Presenter?"
             , "    "
