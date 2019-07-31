@@ -37,7 +37,7 @@ struct RouterTemplate: SourceCodeTemplate {
             , "    }"
             , "    "
             , "    // MARK: - factory"
-            , "    static func factory() -> ViewController {"
+            , "    static func instantiate() -> ViewController {"
             , "        guard let vc = R.storyboard.__prefix__.instantiateInitialViewController() else {"
             , "            fatalError()"
             , "        }"

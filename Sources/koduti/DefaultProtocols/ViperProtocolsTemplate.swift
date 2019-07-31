@@ -65,7 +65,7 @@ struct ViperProtocolsTemplate : Template {
             , "protocol Wireframe {"
             , "    associatedtype ViewController : UserInterface"
             , "    var vc: ViewController { get }"
-            , "    static func factory() -> ViewController"
+            , "    static func instantiate() -> ViewController"
             , "}"
             , ""
             , "// MARK: - Repository"
