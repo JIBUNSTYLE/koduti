@@ -9,6 +9,7 @@ import Foundation
 
 struct InteractorTemplate: SourceCodeTemplate {
     
+    let fileType = "swift"
     let templateType = "Interactor"
     
     func parentDirectory() -> String {

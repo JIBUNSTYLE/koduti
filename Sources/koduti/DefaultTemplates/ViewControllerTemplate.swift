@@ -9,6 +9,7 @@ import Foundation
 
 struct ViewControllerTemplate: SourceCodeTemplate {
     
+    let fileType = "swift"
     let templateType = "ViewController"
     
     func parentDirectory() -> String {

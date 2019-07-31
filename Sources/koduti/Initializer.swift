@@ -71,7 +71,7 @@ public struct Initializer {
             , attributes: nil
         )
         
-        let filePath = directoryPath + "ViperProtocols.swift"
+        let filePath = directoryPath + "ViperProtocols.\(_template.fileType)"
         self.fileManager.createFile(atPath: filePath, contents: nil, attributes: nil)
         
         let content = _template.body().replaceVariables(prefix: "", targetName: projectName)
@@ -104,7 +104,7 @@ public struct Initializer {
                 , attributes: nil
             )
             
-            let filePath = directoryPath + template.fileName
+            let filePath = directoryPath + template.fileName + ".\(_template.fileType)"
             self.fileManager.createFile(atPath: filePath, contents: nil, attributes: nil)
             
             let content = _template.body()

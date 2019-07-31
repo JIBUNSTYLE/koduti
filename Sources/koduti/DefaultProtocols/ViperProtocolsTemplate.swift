@@ -9,6 +9,8 @@ import Foundation
 
 struct ViperProtocolsTemplate : Template {
     
+    let fileType = "swift"
+    
     func parentDirectory() -> String {
         return "System"
     }

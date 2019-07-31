@@ -9,6 +9,8 @@ import Foundation
 
 struct StoryboardTemplate: Template {
     
+    let fileType = "storyboard"
+    
     func parentDirectory() -> String {
         return "Service/Presentation/Storyboards"
     }

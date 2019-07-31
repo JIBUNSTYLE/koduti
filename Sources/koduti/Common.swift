@@ -48,7 +48,7 @@ enum DefaultTemplates: Int, Enumerable {
     }
     
     var fileName: String {
-        return "__PREFIX__\(name).swift"
+        return "__PREFIX__\(name)"
     }
     
     var templateName: String {

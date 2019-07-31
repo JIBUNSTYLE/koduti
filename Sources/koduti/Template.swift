@@ -8,6 +8,7 @@
 import Foundation
 
 protocol Template {
+    var fileType: String { get }
     func parentDirectory() -> String
     func body() -> String
 }
