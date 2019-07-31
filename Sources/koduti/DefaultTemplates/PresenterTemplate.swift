@@ -37,7 +37,7 @@ struct PresenterTemplate: SourceCodeTemplate {
             "class __PREFIX__Presenter<T: __PREFIX__UserInterface, U: __PREFIX__Usecase, V: __PREFIX__Wireframe>: __PREFIX__Presentation {"
             , "    typealias ViewController = T"
             , "    typealias Interactor = U"
-            , "    typealias ViewController = T"
+            , "    typealias Router = V"
             , "    "
             , "    let vc: ViewController"
             , "    let interactor: Interactor"
