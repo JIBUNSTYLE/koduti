@@ -30,7 +30,7 @@ struct RouterTemplate: SourceCodeTemplate {
             "struct __PREFIX__Router {"
             , "    typealias ViewController = __PREFIX__ViewController"
             , "    "
-            , "    let vc: ViewController"
+            , "    weak var vc: ViewController?"
             , "    "
             , "    init(vc: ViewController) {"
             , "        self.vc = vc"

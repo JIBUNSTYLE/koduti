@@ -39,7 +39,7 @@ struct PresenterTemplate: SourceCodeTemplate {
             , "    typealias Interactor = U"
             , "    typealias Router = V"
             , "    "
-            , "    let vc: ViewController"
+            , "    weak var vc: ViewController?"
             , "    let interactor: Interactor"
             , "    let router: Router"
             , "    "
